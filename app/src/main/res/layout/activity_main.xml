@@ -11,15 +11,30 @@
     tools:context="com.wahaj.alarmclock.MainActivity">
 
     <TextView
+        android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:id="@+id/timeTextView"
+        android:textAllCaps="true"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/time"
+        android:layout_alignRight="@+id/time"
+        android:layout_alignEnd="@+id/time" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
-        android:textStyle="normal|bold"
+        android:text="Hello World!"
         android:textAllCaps="true"
+        android:textColor="@android:color/holo_blue_bright"
         android:textSize="30sp"
-        android:textColor="@android:color/holo_blue_bright" />
+        android:textStyle="normal|bold" />
+
+
 </RelativeLayout>

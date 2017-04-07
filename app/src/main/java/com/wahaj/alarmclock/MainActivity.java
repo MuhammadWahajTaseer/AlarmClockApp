@@ -5,19 +5,77 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+
+import static com.wahaj.alarmclock.R.id.date;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView timeText;
+    java.util.Date noteTS;
+    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+    TextView tvTime, tvDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        timeText = (TextView)findViewById(R.id.texto);
+        tvTime = (TextView) findViewById(R.id.time);
+        tvDate = (TextView) findViewById(date);
+
+        // I know this is scary
+        Thread t = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                updateTextView();
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {}
+            }
+        };
+
+        t.start();
+
+        //timeText = (TextView)findViewById(R.id.time);
+        //String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        //timeText.setText(currentDateTimeString);
     }
 
+    /**
+     * Updates time and date in the two text views
+     */
+    public void updateTextView() {
+        long date = System.currentTimeMillis();
 
-    String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-    timeText.setText(currentDateTimeString);
+        // For displaying time
+        sdf.applyPattern("hh:mm:ss a");
+        String dateString = sdf.format(date);
+        tvTime.setText(dateString);
+
+        // For displaying date
+        sdf.applyPattern("MMM dd yyyy");
+        dateString = sdf.format(date);
+        tvDate.setText(dateString);
+
+
+
+
+        //noteTS = Calendar.getInstance().getTime();
+
+
+        //String time = "hh:mm"; // 12:00
+       // tvTime.setText( new SimpleDateFormat("dd/MM/yy HH:mm").format(date));
+
+        //String date = "dd mm yyyy"; // 01 January 2013
+        //tvDate.setText(DateFormat.getDateInstance().format(date));
+    }
 }
