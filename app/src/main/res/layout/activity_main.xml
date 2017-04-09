@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -15,14 +16,13 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_alignEnd="@+id/time"
+        android:layout_alignRight="@+id/time"
+        android:layout_below="@+id/time"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_blue_bright"
         android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:layout_below="@+id/time"
-        android:layout_alignRight="@+id/time"
-        android:layout_alignEnd="@+id/time" />
+        android:textStyle="normal|bold" />
 
     <TextView
         android:id="@+id/time"
@@ -31,11 +31,21 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
-        android:text="Hello World!"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_blue_bright"
         android:textSize="34sp"
         android:textStyle="normal|bold" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:background="@drawable/oval"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:onClick="addAlarmClick"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
 
 </RelativeLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wahaj.alarmclock.CreateAlarmActivity"
+    android:background="#000">
+
+    <TextView
+        android:id="@+id/textViewh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="67dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="130dp"
+        android:text="00"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="54sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewampm"
+        android:layout_alignBottom="@+id/textViewampm"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/textViewh"
+        android:layout_toRightOf="@+id/textViewh"
+        android:text=":"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="54sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewampm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewm"
+        android:layout_alignBottom="@+id/textViewm"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_toEndOf="@+id/textViewm"
+        android:layout_toRightOf="@+id/textViewm"
+        android:text="AM"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="54sp"
+        android:textStyle="bold"
+        android:onClick="ampmToggle"/>
+
+    <TextView
+        android:id="@+id/textViewm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewh"
+        android:layout_alignBottom="@+id/textViewh"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_toEndOf="@+id/textViewh"
+        android:layout_toRightOf="@+id/textViewh"
+        android:text="00"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="54sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/mdown"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_alignLeft="@+id/textViewm"
+        android:layout_alignStart="@+id/textViewm"
+        android:layout_below="@+id/textViewm"
+        android:onClick="onMinsDown"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <ImageButton
+        android:id="@+id/hdown"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_alignLeft="@+id/textViewh"
+        android:layout_alignStart="@+id/textViewh"
+        android:layout_below="@+id/textViewh"
+        android:onClick="onHoursDown"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <ImageButton
+        android:id="@+id/mup"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_above="@+id/textViewm"
+        android:layout_alignLeft="@+id/textViewm"
+        android:layout_alignStart="@+id/textViewm"
+        android:onClick="onMinsUp"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <ImageButton
+        android:id="@+id/hUp"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_above="@+id/textView7"
+        android:layout_alignLeft="@+id/textViewh"
+        android:layout_alignStart="@+id/textViewh"
+        android:onClick="onHoursUp"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+</RelativeLayout>
