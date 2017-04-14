@@ -11,16 +11,16 @@
         android:id="@+id/textViewh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="67dp"
         android:layout_marginStart="67dp"
         android:layout_marginTop="130dp"
-        android:text="00"
+        android:text="12"
         android:textColor="@android:color/holo_blue_bright"
         android:textSize="54sp"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView7"
@@ -107,4 +107,16 @@
         android:layout_alignStart="@+id/textViewh"
         android:onClick="onHoursUp"
         app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textViewampm"
+        android:layout_alignRight="@+id/textViewampm"
+        android:layout_below="@+id/mdown"
+        android:layout_marginTop="83dp"
+        android:onClick="CreateAlarm"
+        android:text="Set Alarm" />
+
 </RelativeLayout>

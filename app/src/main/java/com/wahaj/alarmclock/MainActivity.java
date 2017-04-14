@@ -1,39 +1,77 @@
 package com.wahaj.alarmclock;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.support.v4.view.GestureDetectorCompat;
+import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ImageButton;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 
+import static com.wahaj.alarmclock.R.id.activity_chooser_view_content;
 import static com.wahaj.alarmclock.R.id.date;
+import static com.wahaj.alarmclock.ViewAlarms.arrayAdapter;
+import static com.wahaj.alarmclock.ViewAlarms.listOfAlarms;
+import static com.wahaj.alarmclock.ViewAlarms.listView;
+import static java.security.AccessController.getContext;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Serializable {
 
-    java.util.Date noteTS;
+
     SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
     TextView tvTime, tvDate;
-    ImageButton addAlarm;
+    Button addAlarm, viewButton;
 
+
+
+    /**
+     *
+     * @param savedInstanceState Instance of activity
+     * Method that gets invoked when activity starts
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvTime = (TextView) findViewById(R.id.time);
         tvDate = (TextView) findViewById(date);
-        addAlarm = (ImageButton) findViewById(R.id.imageButton);
+        addAlarm = (Button) findViewById(R.id.imageButton);
+        viewButton = (Button) findViewById(R.id.viewButton);
 
 
 
-        // I know this is scary
+        // I know this is scary lol
         Thread t = new Thread() {
 
             @Override
@@ -53,10 +91,6 @@ public class MainActivity extends AppCompatActivity {
         };
 
         t.start();
-
-        //timeText = (TextView)findViewById(R.id.time);
-        //String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-        //timeText.setText(currentDateTimeString);
     }
 
     /**
@@ -76,20 +110,29 @@ public class MainActivity extends AppCompatActivity {
         tvDate.setText(dateString);
 
 
-
-
-        //noteTS = Calendar.getInstance().getTime();
-
-
-        //String time = "hh:mm"; // 12:00
-       // tvTime.setText( new SimpleDateFormat("dd/MM/yy HH:mm").format(date));
-
-        //String date = "dd mm yyyy"; // 01 January 2013
-        //tvDate.setText(DateFormat.getDateInstance().format(date));
     }
 
+    /**
+     *
+     * @param view the button that fired the event
+     *
+     *        Starts new activity which is a template to create an alarm
+     */
     public void addAlarmClick(View view) {
-        Toast.makeText(getApplicationContext(), "Button is clicked", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(MainActivity.this, CreateAlarmActivity.class));
+        Intent intent = new Intent(this, CreateAlarmActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     *
+     * @param view The button that fired the event
+     *
+     *        Starts new activity that shows a lsit of alarms
+     */
+    public void viewAlarmClick(View view) {
+        Intent intent = new Intent(this, ViewAlarms.class);
+        startActivity(intent);
     }
 }
+
+

@@ -10,7 +10,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.wahaj.alarmclock.MainActivity"
-    android:background="#000">
+    android:background="#000"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <TextView
         android:id="@+id/date"
@@ -21,7 +24,7 @@
         android:layout_below="@+id/time"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_blue_bright"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="normal|bold" />
 
     <TextView
@@ -33,19 +36,46 @@
         android:layout_marginTop="75dp"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_blue_bright"
-        android:textSize="34sp"
+        android:textSize="40sp"
         android:textStyle="normal|bold" />
 
-    <ImageButton
+    <Button
         android:id="@+id/imageButton"
-        android:background="@drawable/oval"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
+
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:background="@drawable/oval"
         android:onClick="addAlarmClick"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        android:shadowColor="#0085AD"
+        android:shadowDx="7"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textSize="69sp" />
+
+    <Button
+        android:id="@+id/viewButton"
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/oval"
+        android:onClick="viewAlarmClick"
+        android:shadowColor="#0085AD"
+        android:shadowDx="7"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="O"
+        android:textColor="#FFFFFF"
+        android:textSize="69sp" />
 
 
 </RelativeLayout>

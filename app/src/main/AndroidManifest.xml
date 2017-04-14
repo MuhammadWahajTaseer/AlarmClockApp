@@ -15,7 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateAlarmActivity"></activity>
+        <activity android:name=".CreateAlarmActivity" />
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:process=":remote" />
+
+        <activity android:name=".ViewAlarms"></activity>
     </application>
 
 </manifest>
