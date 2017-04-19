@@ -17,11 +17,18 @@ import android.widget.Toast;
 
 
 /**
- * Created by wahaj on 2017-04-11.
+ * This class chooses what will happen once the alarm goes off
  */
 
 public class AlarmReceiver extends WakefulBroadcastReceiver {
 
+    /**
+     *
+     * @param context   App context for ringing
+     * @param intent    Intent for service
+     *
+     *                  Handles playing the default alarm
+     */
     @Override
     public void onReceive(final Context context, Intent intent) {
         //this will update the UI with message

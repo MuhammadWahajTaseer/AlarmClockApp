@@ -4,7 +4,8 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 
 /**
- * Created by wahaj on 2017-04-10.
+ * From Stack overflow
+ * Class that takes in fling event and provides with which way use swiped
  */
 
 public class OnSwipeListener extends GestureDetector.SimpleOnGestureListener {

@@ -19,6 +19,11 @@ import static com.wahaj.alarmclock.ViewAlarms.listOfAlarms;
 import static com.wahaj.alarmclock.ViewAlarms.listView;
 
 
+/**
+ *  Create Alarm activity
+ *  Handles the page where user can pick a time to set an alarm for
+ *
+ */
 public class CreateAlarmActivity extends AppCompatActivity {
     private static CreateAlarmActivity inst;
 

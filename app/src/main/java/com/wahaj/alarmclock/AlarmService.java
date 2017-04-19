@@ -9,12 +9,13 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 /**
- * Created by wahaj on 2017-04-14.
+ * Helper class provides alarm service
  */
 
 
 public class AlarmService extends IntentService {
     private NotificationManager alarmNotificationManager;
+
 
     public AlarmService() {
         super("AlarmService");
@@ -25,6 +26,11 @@ public class AlarmService extends IntentService {
         sendNotification("Wake Up! Wake Up!");
     }
 
+
+    /**
+     *
+     * @param msg   Senfs user notification when alarm rings
+     */
     private void sendNotification(String msg) {
         Log.d("AlarmService", "Preparing to send notification...: " + msg);
         alarmNotificationManager = (NotificationManager) this

@@ -42,38 +42,36 @@
     <Button
         android:id="@+id/imageButton"
 
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/oval"
+        android:background="@drawable/plus2"
         android:onClick="addAlarmClick"
         android:shadowColor="#0085AD"
         android:shadowDx="7"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:text="+"
         android:textColor="#FFFFFF"
         android:textSize="69sp" />
 
     <Button
         android:id="@+id/viewButton"
-
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_alignParentBottom="true"
+
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/oval"
+        android:background="@drawable/eye2"
         android:onClick="viewAlarmClick"
         android:shadowColor="#0085AD"
         android:shadowDx="7"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:text="O"
+        android:src="@drawable/eye"
         android:textColor="#FFFFFF"
         android:textSize="69sp" />
 

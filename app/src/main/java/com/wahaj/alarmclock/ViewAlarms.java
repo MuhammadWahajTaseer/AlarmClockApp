@@ -7,6 +7,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
+/**
+ * View Alarms activity. This page uses
+ * a list view to display all alarms in the arraylist
+ */
 public class ViewAlarms extends AppCompatActivity {
 
 

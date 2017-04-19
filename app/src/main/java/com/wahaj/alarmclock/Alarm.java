@@ -1,12 +1,11 @@
 package com.wahaj.alarmclock;
 
 /**
- * Created by wahaj on 2017-04-09.
+ * This is the Alarm class that stores all information about the alarm
+ * It has getters and setters to access private fields
  */
 
 public class Alarm {
-
-
 
     private int id;
     private int hour;
@@ -60,9 +59,6 @@ public class Alarm {
      * Getter methods of attributes from Alarm class
      *
      */
-
-
-
     public int getOrigHour()
     {
         return this.origHour;
@@ -128,8 +124,10 @@ public class Alarm {
     }
 
 
-
-
+    /**
+     *
+     * @return Converts alarm object to a string for displaying
+     */
     public String toString()
     {
 
@@ -155,22 +153,10 @@ public class Alarm {
 
 
 
-
-
-
-
-
-
-
-
     /**
      * Setter methods of attributes from Alarm class
      *
      */
-
-
-
-
 
     public void setOrigHour(int hour)
     {
@@ -223,10 +209,6 @@ public class Alarm {
     {
         this.descript = words;
     }
-
-
-
-
 
 
 

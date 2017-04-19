@@ -46,6 +46,11 @@ import static com.wahaj.alarmclock.ViewAlarms.listOfAlarms;
 import static com.wahaj.alarmclock.ViewAlarms.listView;
 import static java.security.AccessController.getContext;
 
+
+/**
+ * Main android activity displays time and handles event listeners
+ * for the buttons that launch the other activities
+ */
 public class MainActivity extends AppCompatActivity implements Serializable {
 
 
